@@ -8,7 +8,7 @@ import Wind from './images/wind.png';
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
-  const [city, setCity] = useState('Mysuru');
+  const [city, setCity] = useState('');
   const apiKey = '3e093108cfbe8becafb6012c53333b53';
 
   useEffect(() => {
