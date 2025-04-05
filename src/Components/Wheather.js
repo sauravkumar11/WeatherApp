@@ -58,7 +58,9 @@ const Weather = () => {
           <img alt='' src={Search} />
         </button>
       </div>
-      {weather && weather.current ? (
+      {city === '' ? ( <p style={{ paddingTop: "20px" }}>Type to search weather</p>
+      )
+      :weather && weather.current ? (
         <div className='weather'>
           <img src={Rain} className='weather-icon' alt='weather-icon'/>
           <h1 className='temp'>{weather.current.temperature}°C</h1>
