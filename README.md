@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# WeatherApp
+This React-based Weather App allows users to search for and view real-time weather information for any city. It fetches data from the WeatherStack API and displays key weather details, including temperature, humidity, wind speed, and location information.
+>>>>>>> f5e80489220d8530b05fd0b4427f3db1b4618c48
