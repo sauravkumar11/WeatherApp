@@ -9,17 +9,20 @@ import Wind from './images/wind.png';
 const Weather = () => {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState('');
-  const apiKey = '3e093108cfbe8becafb6012c53333b53';
+  const apiKey = '005cd9b7e0d68ede9200572b79cf6970';// Replace with your OpenWeatherMap API key
 
   useEffect(() => {
     const fetchWeather = async () => {
+      if (!city) return; // Avoid making API calls if the city is empty
+
       const options = {
         method: 'GET',
-        url: 'https://api.weatherstack.com/current',
+        url: `https://api.openweathermap.org/data/2.5/weather`,
         params: {
-          access_key: apiKey,
-          query: city,
-        }
+          q: city,
+          appid: apiKey,
+          units: 'metric', // Fetch temperature in Celsius
+        },
       };
 
       try {
@@ -58,38 +61,39 @@ const Weather = () => {
           <img alt='' src={Search} />
         </button>
       </div>
-      {city === '' ? ( <p style={{ paddingTop: "20px" }}>Type to search weather</p>
-      )
-      :weather && weather.current ? (
+      {city === '' ? (
+        <div className="background-message">
+          <p>Type to search weather</p>
+        </div>
+      ) : weather ? (
         <div className='weather'>
           <img src={Rain} className='weather-icon' alt='weather-icon'/>
-          <h1 className='temp'>{weather.current.temperature}°C</h1>
-          <h2 className='city'>{weather.location.name}</h2>
-          <span className='region'>{weather.location.region} ,</span>
-          <span className='country'> {weather.location.country}</span>
+          <h1 className='temp'>{weather.main.temp}°C</h1>
+          <h2 className='city'>{weather.name}</h2>
+          <span className='region'>{weather.sys.country}</span>
           <div className='details'>
             <div className='col'>
               <img src={Humidity} alt="Images"/>
               <div>
-                <p className='humidity'>{weather.current.humidity}%</p>
+                <p className='humidity'>{weather.main.humidity}%</p>
                 <p>Humidity</p>
               </div>
             </div>
             <div className='col'>
               <img src={Wind} alt="Images"/>
               <div>
-                <p className='wind'>{weather.current.wind_speed} km/h</p>
+                <p className='wind'>{weather.wind.speed} km/h</p>
                 <p>Wind</p>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <p style={{paddingTop:"20px"}}>Loading weather data...</p>
+        <p style={{ paddingTop: "20px" }}>Loading weather data...</p>
       )}
     </div>
   );
-}
+};
 
 export default Weather;
 

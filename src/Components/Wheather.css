@@ -4,7 +4,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* To center vertically as well */
     margin: 0;
 }
 
@@ -22,23 +21,20 @@ body {
     color: #fff;
     border-radius: 20px;
     padding: 40px 35px;
-    text-align: center;
+    text-align: center;   
+
 }
 
 .search {
-    /* width: 100%; */
-    /* max-height: 10px; */
+
     display: flex;
-    /* padding: 10px 40px; */
     align-items: center;
-    /* justify-content: space-between; */
-    /* border: 2px solid red; */
+ 
 }
 
 .search input {
-    /* border-bottom: solid 1px rgb(127, 123, 123); */
     outline: 0;
-    border: 0;
+    border: none;
     background: #ebfffc;
     color: #5555;
     padding: 0px 15px;
@@ -48,6 +44,7 @@ body {
     margin-right: 16px;
     font-size: 15px;
     font-weight: bold;
+    transition: 0.25 border;
 }
 
 .search button {
@@ -63,12 +60,7 @@ body {
 }
 
 .search button img {
-    /* width: 30px;
-    height: 30px;
-  
-    overflow: hidden;
-    position: relative;
-    top: 4px; */
+
     width: 25px;
     position: absolute;
     top: 11px;
@@ -77,8 +69,6 @@ body {
 
 .weather-icon {
     width: 170px;
-    /* margin-top: 30px; */
-
 }
 
 .weather h1 {
@@ -112,15 +102,12 @@ body {
     width: 40PX;
     margin-right: 10PX;
 }
-/* .temp{
-    font-size: 30vw;
-} */
 
 .humidity,
 .wind {
     font-size: 1.5vw;
     margin-top: -6px;
-    /* position: relative;display: flex;
-    justify-content: space-between;
-    margin: 10px 0px; */
+}
+.background-message{
+    margin-top: 20px;
 }
